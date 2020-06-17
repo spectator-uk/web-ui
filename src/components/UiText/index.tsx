@@ -7,7 +7,7 @@ import {
   ThemeTextWeights,
   ThemeColors
 } from 'spectator-uk-theme'
-import { ThemeBreakpoints } from 'global/theme'
+import { ThemeBreakpoints } from '../../global/theme'
 import { AsProp } from 'types/asProp'
 
 export interface UiTextProps {

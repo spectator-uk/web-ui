@@ -1,7 +1,7 @@
 import { ThemeColors } from 'spectator-uk-theme'
 import { css } from 'styled-components'
 import { rgba } from 'polished'
-import { theme } from 'global/theme'
+import { theme } from '../../global/theme'
 
 export const tripleLine = (
   position: string = 'top',
