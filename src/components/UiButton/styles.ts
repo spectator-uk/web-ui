@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { lighten, rgba } from 'polished'
-import UiIcon from '../UiIcon'
+import { UiIcon } from '../UiIcon'
 import { UiButtonProps, UiButtonIconProps } from '.'
 import { buttonMetrics } from './metrics'
 import { UiText, UiTextProps } from '../UiText'
