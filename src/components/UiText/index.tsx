@@ -1,17 +1,16 @@
 import React, { forwardRef } from 'react'
 import { Styled } from './styles'
-import { DefaultTheme } from 'styled-components'
 import {
   ThemeSizes,
   ThemeTextLineHeights,
   ThemeTextWeights,
   ThemeColors
 } from 'spectator-uk-theme'
-import { ThemeBreakpoints } from '../../global/theme'
+import { theme, ThemeBreakpoints } from '../../global/theme'
 import { AsProp } from 'types/asProp'
 
 export interface UiTextProps {
-  type: keyof DefaultTheme['text']
+  type: keyof typeof theme['text']
   size:
     | ThemeSizes
     | { [key in Exclude<ThemeBreakpoints, 'desktop'>]?: ThemeSizes }
