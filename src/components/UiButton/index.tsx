@@ -45,8 +45,8 @@ export const UiButton: React.FC<UiButtonProps> = ({
 }) => {
   const { textSizeValue, textColorValue } = useUiButtonLogic(
     size,
-    textColor,
-    color
+    color,
+    textColor
   )
 
   return (
@@ -63,7 +63,8 @@ export const UiButton: React.FC<UiButtonProps> = ({
     >
       <Styled.buttonText
         forwardedAs='span'
-        type='info'
+        type='accent'
+        weight='bold'
         size={textSizeValue}
         color={textColorValue}
       >

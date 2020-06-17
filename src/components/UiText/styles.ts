@@ -41,8 +41,7 @@ const text = styled.p<UiTextStyledProps>`
 
   &,
   &:visited {
-    color: ${({ theme, color }) =>
-      color && color !== 'inherit' && theme.color[color]};
+    color: ${({ theme, color }) => (color && theme.color[color]) || 'inherit'};
   }
 
   /* Link styles */

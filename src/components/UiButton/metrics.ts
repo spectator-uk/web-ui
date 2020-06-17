@@ -17,8 +17,8 @@ export const buttonMetrics: UiButtonMetrics = {
     height: '3rem',
 
     paddingX: {
-      narrow: '2rem',
-      normal: '3rem',
+      narrow: '1.5rem',
+      normal: '2rem',
       wide: '4rem'
     },
 
@@ -89,9 +89,9 @@ export const buttonMetrics: UiButtonMetrics = {
     height: '8rem',
 
     paddingX: {
-      narrow: '4rem',
-      normal: '8rem',
-      wide: '16rem'
+      narrow: '6rem',
+      normal: '12rem',
+      wide: '24rem'
     },
 
     circleSize: '8rem'

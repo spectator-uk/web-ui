@@ -1,22 +1,24 @@
 import { UiTextProps } from '../UiText'
-import { UiButtonColors, UiButtonProps } from '.'
+import { UiButtonProps } from '.'
 
 export const useUiButtonLogic = (
   size: UiButtonProps['size'],
-  textColor: UiButtonProps['textColor'],
-  color: UiButtonColors
+  color: UiButtonProps['color'],
+  textColor: UiButtonProps['textColor']
 ) => {
   const textSizeValue: UiTextProps['size'] =
-    size === 'xs' || size === 's'
+    size === 'xxs'
+      ? 'xs'
+      : size === 'xs' || size === 's'
       ? 's'
       : size === 'm' || size === 'l'
       ? 'm'
-      : size === 'xl'
+      : size === 'xl' || size === 'xxl'
       ? 'l'
-      : 'm'
+      : 'm' // default
 
   const textColorValue: UiTextProps['color'] =
-    (color === 'ghost' && 'black') || 'white'
+    textColor || (color === 'ghost' && 'black') || 'white'
 
   return {
     textSizeValue,
