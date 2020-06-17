@@ -34,7 +34,7 @@ export type UiTextStyledProps = UiTextProps & {
   webfontLoaded?: boolean
 }
 
-const UiText: React.FC<UiTextProps> = forwardRef(
+export const UiText: React.FC<UiTextProps> = forwardRef(
   (
     {
       type,
@@ -76,5 +76,3 @@ const UiText: React.FC<UiTextProps> = forwardRef(
     )
   }
 )
-
-export default UiText
