@@ -7,7 +7,7 @@ import { iconMetrics } from './metrics'
 export interface UiIconProps {
   icon: keyof typeof icons | undefined
   size?: ThemeSizes
-  color?: 'currentColor' | ThemeColors
+  color?: 'currentColor' | keyof ThemeColors
   className?: string
 }
 

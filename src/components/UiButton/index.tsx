@@ -4,20 +4,18 @@ import { UiIconProps } from '../UiIcon'
 import { useUiButtonLogic } from './logic'
 import { ThemeSizes, ThemeColors } from 'spectator-uk-theme'
 
-export type UiButtonColors = ThemeColors
-
 export interface UiButtonProps {
   href?: string
   as?: 'button' | 'a' | 'span'
   size?: ThemeSizes
   width?: 'narrow' | 'normal' | 'wide' | 'full'
-  color?: UiButtonColors
-  textColor?: 'inherit' | ThemeColors
+  color?: keyof Pick<ThemeColors, 'primary' | 'ghost' | 'ghostWhite'>
+  textColor?: keyof ThemeColors
   shape?: 'pill' | 'circle' | 'square'
   icon?: UiIconProps['icon']
   iconPosition?: 'before' | 'center' | 'after'
   iconSize?: ThemeSizes
-  iconColor?: ThemeColors
+  iconColor?: keyof ThemeColors
   hovered?: boolean
   onClick?: (event: SyntheticEvent) => void | Promise<void> | Function
   className?: string

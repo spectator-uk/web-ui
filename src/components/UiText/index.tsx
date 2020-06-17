@@ -19,7 +19,7 @@ export interface UiTextProps {
   lineHeight?: ThemeTextLineHeights
   weight?: ThemeTextWeights | { [key in ThemeBreakpoints]?: ThemeTextWeights }
   textStyle?: 'normal' | 'italic'
-  color?: ThemeColors
+  color?: keyof ThemeColors
   align?: 'left' | 'center'
   minLines?: number | { [key in ThemeBreakpoints]?: number }
   maxLines?: number | { [key in ThemeBreakpoints]?: number }
