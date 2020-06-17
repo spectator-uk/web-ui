@@ -7,7 +7,7 @@ import {
   ThemeColors
 } from 'spectator-uk-theme'
 import { theme, ThemeBreakpoints } from '../../global/theme'
-import { AsProp } from 'types/asProp'
+import { AsProp } from '../../types/asProp'
 
 export interface UiTextProps {
   type: keyof typeof theme['text']
