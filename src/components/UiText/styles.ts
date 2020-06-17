@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { UiTextStyledProps } from '.'
 import { rgba } from 'polished'
-import { calculateTextHeightByLines } from './functions/calculateTextHeightByLines'
+import { calculateTextHeightByLines } from '../../utilities/functions/calculateTextHeightByLines'
 import { ThemeTextDefinition } from 'spectator-uk-theme'
 import { determineBreakpointValue } from '../../utilities/functions/determineBreakpointValue'
 

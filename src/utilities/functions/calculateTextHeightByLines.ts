@@ -1,6 +1,6 @@
-import { UiTextProps } from '..'
+import { UiTextProps } from '../../components/UiText'
 import { rem, stripUnit } from 'polished'
-import { theme, ThemeBreakpoints } from '../../../global/theme'
+import { theme, ThemeBreakpoints } from '../../global/theme'
 
 export const calculateTextHeightByLines = (
   lines?: UiTextProps['minLines'] | UiTextProps['maxLines'],
