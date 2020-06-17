@@ -1,3 +1,5 @@
+import { theme } from './global/theme'
+
 // Provider
 export * from './global/provider'
 
@@ -17,3 +19,9 @@ export * from './utilities/mixins/tripleLine'
 
 // Types
 export * from './types/asProp'
+
+type Theme = typeof theme
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends Theme {}
+}
