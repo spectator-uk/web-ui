@@ -4,7 +4,11 @@ import { ThemeColors } from 'spectator-uk-theme'
 import { theme } from '../../global/theme'
 
 export interface UiLogoProps {
-  type?: 'full' | 'mini'
+  type?:
+    | 'spectator'
+    | 'spectator-mini'
+    | 'spectator-life'
+    | 'spectator-boardroom'
   color?: keyof ThemeColors
   className?: string
 }

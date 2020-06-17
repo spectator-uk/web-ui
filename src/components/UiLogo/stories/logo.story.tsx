@@ -14,6 +14,6 @@ export const Full = () => (
 
 export const Mini = () => (
   <div style={{ fontSize: 56 }}>
-    <UiLogo type='mini' />
+    <UiLogo type='spectator-mini' />
   </div>
 )
