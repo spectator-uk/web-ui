@@ -1,4 +1,4 @@
-import { ThemeBreakpoints } from 'global/theme'
+import { ThemeBreakpoints } from '../../global/theme'
 
 export const determineBreakpointValue = <T extends string>(
   input?:

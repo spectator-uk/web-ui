@@ -3,7 +3,7 @@ import { UiTextStyledProps } from '.'
 import { rgba } from 'polished'
 import { calculateTextHeightByLines } from './functions/calculateTextHeightByLines'
 import { ThemeTextDefinition } from 'spectator-uk-theme'
-import { determineBreakpointValue } from 'utilities/functions/determineBreakpointValue'
+import { determineBreakpointValue } from '../../utilities/functions/determineBreakpointValue'
 
 const linkStyles = css<UiTextStyledProps>`
   color: ${({ theme, color }) => !color && theme.color.primary};
