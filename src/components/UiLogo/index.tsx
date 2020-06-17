@@ -13,7 +13,7 @@ export interface UiLogoProps {
   className?: string
 }
 
-const UiLogo: React.FC<UiLogoProps> = ({
+export const UiLogo: React.FC<UiLogoProps> = ({
   type = 'full',
   color = 'primary',
   className
@@ -41,5 +41,3 @@ const UiLogo: React.FC<UiLogoProps> = ({
     </Styled.logo>
   )
 }
-
-export default UiLogo

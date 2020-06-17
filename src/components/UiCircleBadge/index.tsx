@@ -9,7 +9,7 @@ export interface UiCircleBadgeProps {
   className?: string
 }
 
-const UiCircleBadge: React.FC<UiCircleBadgeProps> = ({
+export const UiCircleBadge: React.FC<UiCircleBadgeProps> = ({
   size = 's',
   color = 'primary',
   pulse = true,
@@ -24,5 +24,3 @@ const UiCircleBadge: React.FC<UiCircleBadgeProps> = ({
     />
   )
 }
-
-export default UiCircleBadge

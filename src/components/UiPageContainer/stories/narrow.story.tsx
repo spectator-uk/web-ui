@@ -1,5 +1,5 @@
 import React from 'react'
-import UiPageContainer from '..'
+import { UiPageContainer } from '..'
 
 export default {
   component: UiPageContainer,

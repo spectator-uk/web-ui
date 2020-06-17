@@ -1,5 +1,5 @@
 import React from 'react'
-import UiLogo from '..'
+import { UiLogo } from '..'
 
 export default {
   component: UiLogo,

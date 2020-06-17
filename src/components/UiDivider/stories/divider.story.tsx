@@ -1,5 +1,5 @@
 import React from 'react'
-import UiDivider from '..'
+import { UiDivider } from '..'
 
 export default {
   component: UiDivider,

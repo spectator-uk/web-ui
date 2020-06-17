@@ -8,7 +8,7 @@ export interface UiPageContainerProps {
   className?: string
 }
 
-const UiPageContainer: React.FC<UiPageContainerProps> = ({
+export const UiPageContainer: React.FC<UiPageContainerProps> = ({
   width = 'normal',
   as,
   className,
@@ -20,5 +20,3 @@ const UiPageContainer: React.FC<UiPageContainerProps> = ({
     </Styled.container>
   )
 }
-
-export default UiPageContainer

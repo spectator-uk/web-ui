@@ -11,7 +11,7 @@ export interface UiIconProps {
   className?: string
 }
 
-const UiIcon: React.FC<UiIconProps> = ({
+export const UiIcon: React.FC<UiIconProps> = ({
   icon,
   size = 'm',
   color = 'currentColor',
@@ -37,5 +37,3 @@ const UiIcon: React.FC<UiIconProps> = ({
     </svg>
   )
 }
-
-export default UiIcon

@@ -1,5 +1,5 @@
 import React from 'react'
-import UiCircleBadge from '..'
+import { UiCircleBadge } from '..'
 
 export default {
   component: UiCircleBadge,
