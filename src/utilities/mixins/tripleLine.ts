@@ -3,7 +3,10 @@ import { css } from 'styled-components'
 import { rgba } from 'polished'
 import { theme } from 'global/theme'
 
-export const tripleLine = (position: string = 'top', color?: ThemeColors) => {
+export const tripleLine = (
+  position: string = 'top',
+  color?: keyof ThemeColors
+) => {
   if (position === 'none') {
     return css`
       position: unset;
