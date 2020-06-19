@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react'
+import React, { SyntheticEvent, forwardRef } from 'react'
 import { Styled } from './styles'
 import { UiIconProps } from '../UiIcon'
 import { useUiButtonLogic } from './logic'
@@ -24,85 +24,91 @@ export interface UiButtonProps {
 export type UiButtonIconProps = UiIconProps &
   Pick<UiButtonProps, 'iconPosition'>
 
-export const UiButton: React.FC<UiButtonProps> = ({
-  href,
-  as = 'button',
-  size = 'm',
-  width = 'normal',
-  color = 'primary',
-  textColor,
-  shape = 'pill',
-  icon,
-  iconPosition = 'before',
-  iconSize = size,
-  iconColor,
-  hovered = false,
-  onClick,
-  className,
-  children
-}) => {
-  const { textSizeValue, textColorValue } = useUiButtonLogic(
-    size,
-    color,
-    textColor
-  )
+export const UiButton: React.FC<UiButtonProps> = forwardRef(
+  (
+    {
+      href,
+      as = 'button',
+      size = 'm',
+      width = 'normal',
+      color = 'primary',
+      textColor,
+      shape = 'pill',
+      icon,
+      iconPosition = 'before',
+      iconSize = size,
+      iconColor,
+      hovered = false,
+      onClick,
+      className,
+      children
+    },
+    ref
+  ) => {
+    const { textSizeValue, textColorValue } = useUiButtonLogic(
+      size,
+      color,
+      textColor
+    )
 
-  return (
-    <Styled.button
-      as={as}
-      href={href}
-      size={size}
-      width={width}
-      color={color}
-      shape={shape}
-      hovered={hovered}
-      onClick={onClick}
-      className={className}
-    >
-      <Styled.buttonText
-        forwardedAs='span'
-        type='accent'
-        weight='bold'
-        size={textSizeValue}
-        color={textColorValue}
+    return (
+      <Styled.button
+        ref={ref as any}
+        as={as}
+        href={href}
+        size={size}
+        width={width}
+        color={color}
+        shape={shape}
+        hovered={hovered}
+        onClick={onClick}
+        className={className}
       >
-        {!icon && children}
+        <Styled.buttonText
+          forwardedAs='span'
+          type='accent'
+          weight='bold'
+          size={textSizeValue}
+          color={textColorValue}
+        >
+          {!icon && children}
 
-        {icon && iconPosition === 'before' && (
-          <>
+          {icon && iconPosition === 'before' && (
+            <>
+              <Styled.icon
+                icon={icon}
+                iconPosition={iconPosition}
+                size={iconSize}
+                color={iconColor || textColorValue}
+              />
+
+              {children}
+            </>
+          )}
+
+          {icon && iconPosition === 'center' && (
             <Styled.icon
               icon={icon}
               iconPosition={iconPosition}
               size={iconSize}
               color={iconColor || textColorValue}
             />
+          )}
 
-            {children}
-          </>
-        )}
+          {icon && iconPosition === 'after' && (
+            <>
+              {children}
 
-        {icon && iconPosition === 'center' && (
-          <Styled.icon
-            icon={icon}
-            iconPosition={iconPosition}
-            size={iconSize}
-            color={iconColor || textColorValue}
-          />
-        )}
-
-        {icon && iconPosition === 'after' && (
-          <>
-            {children}
-
-            <Styled.icon
-              icon={icon}
-              iconPosition={iconPosition}
-              size={iconSize}
-              color={iconColor || textColorValue}
-            />
-          </>
-        )}
-      </Styled.buttonText>
-    </Styled.button>
-  )
-}
+              <Styled.icon
+                icon={icon}
+                iconPosition={iconPosition}
+                size={iconSize}
+                color={iconColor || textColorValue}
+              />
+            </>
+          )}
+        </Styled.buttonText>
+      </Styled.button>
+    )
+  }
+)

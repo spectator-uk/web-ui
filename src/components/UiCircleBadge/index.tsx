@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Styled } from './styles'
 import { ThemeSizes, ThemeColors } from 'spectator-uk-theme'
 
@@ -9,18 +9,16 @@ export interface UiCircleBadgeProps {
   className?: string
 }
 
-export const UiCircleBadge: React.FC<UiCircleBadgeProps> = ({
-  size = 's',
-  color = 'primary',
-  pulse = true,
-  className
-}) => {
-  return (
-    <Styled.circle
-      size={size}
-      color={color}
-      pulse={pulse}
-      className={className}
-    />
-  )
-}
+export const UiCircleBadge: React.FC<UiCircleBadgeProps> = forwardRef(
+  ({ size = 's', color = 'primary', pulse = true, className }, ref) => {
+    return (
+      <Styled.circle
+        ref={ref as any}
+        size={size}
+        color={color}
+        pulse={pulse}
+        className={className}
+      />
+    )
+  }
+)

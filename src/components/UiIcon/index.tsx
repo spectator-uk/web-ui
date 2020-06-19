@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { icons } from './icons'
 import { ThemeSizes, ThemeColors } from 'spectator-uk-theme'
 import { theme } from '../../global/theme'
@@ -11,29 +11,27 @@ export interface UiIconProps {
   className?: string
 }
 
-export const UiIcon: React.FC<UiIconProps> = ({
-  icon,
-  size = 'm',
-  color = 'currentColor',
-  className
-}) => {
-  const sizeValue = iconMetrics[size]?.sizeValue
+export const UiIcon: React.FC<UiIconProps> = forwardRef(
+  ({ icon, size = 'm', color = 'currentColor', className }, ref) => {
+    const sizeValue = iconMetrics[size]?.sizeValue
 
-  const colorValue =
-    color === 'currentColor' ? 'currentColor' : theme.color[color]
+    const colorValue =
+      color === 'currentColor' ? 'currentColor' : theme.color[color]
 
-  return (
-    <svg
-      width={sizeValue}
-      height={sizeValue}
-      viewBox={icon ? icons[icon].viewBox : undefined}
-      className={className}
-    >
-      <path
-        d={icon ? icons[icon]?.path : undefined}
-        fill={colorValue}
-        fillRule='nonzero'
-      />
-    </svg>
-  )
-}
+    return (
+      <svg
+        ref={ref as any}
+        width={sizeValue}
+        height={sizeValue}
+        viewBox={icon ? icons[icon].viewBox : undefined}
+        className={className}
+      >
+        <path
+          d={icon ? icons[icon]?.path : undefined}
+          fill={colorValue}
+          fillRule='nonzero'
+        />
+      </svg>
+    )
+  }
+)
