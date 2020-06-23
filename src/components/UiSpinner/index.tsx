@@ -8,7 +8,7 @@ export interface UiSpinnerProps {
   className?: string
 }
 
-const UiSpinner: React.FC<UiSpinnerProps> = forwardRef(
+export const UiSpinner: React.FC<UiSpinnerProps> = forwardRef(
   ({ color = 'primary', size = 'm', className }, ref) => {
     return (
       <Styled.container ref={ref as any} className={className}>
@@ -26,5 +26,3 @@ const UiSpinner: React.FC<UiSpinnerProps> = forwardRef(
     )
   }
 )
-
-export default UiSpinner
