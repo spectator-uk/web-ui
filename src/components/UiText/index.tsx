@@ -1,15 +1,16 @@
 import React, { forwardRef } from 'react'
-import { Styled } from './styles'
 import {
+  ThemeColors,
   ThemeSizes,
   ThemeTextLineHeights,
-  ThemeTextWeights,
-  ThemeColors
+  ThemeTextWeights
 } from 'spectator-uk-theme'
+import { StandardProps } from 'types/standardProps'
 import { theme, ThemeBreakpoints } from '../../global/theme'
 import { AsProp } from '../../types/asProp'
+import { Styled } from './styles'
 
-export interface UiTextProps {
+export interface UiTextProps extends StandardProps {
   type: keyof typeof theme['text']
   size:
     | ThemeSizes
@@ -23,9 +24,7 @@ export interface UiTextProps {
   minLines?: number | { [key in ThemeBreakpoints]?: number }
   maxLines?: number | { [key in ThemeBreakpoints]?: number }
   href?: string
-  onClick?: () => void
   as?: AsProp
-  className?: string
 }
 
 export type UiTextStyledProps = UiTextProps & {
@@ -46,8 +45,9 @@ export const UiText: React.FC<UiTextProps> = forwardRef(
       minLines,
       maxLines,
       href,
-      onClick,
       as = 'p',
+      onClick,
+      id,
       className,
       children
     },
@@ -68,6 +68,7 @@ export const UiText: React.FC<UiTextProps> = forwardRef(
         maxLines={maxLines}
         href={href}
         onClick={onClick}
+        id={id}
         className={className}
       >
         {children}

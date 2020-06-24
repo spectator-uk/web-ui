@@ -1,10 +1,11 @@
-import React, { SyntheticEvent, forwardRef } from 'react'
-import { Styled } from './styles'
+import React, { forwardRef } from 'react'
+import { ThemeColors, ThemeSizes } from 'spectator-uk-theme'
+import { StandardProps } from 'types/standardProps'
 import { UiIconProps } from '../UiIcon'
 import { useUiButtonLogic } from './logic'
-import { ThemeSizes, ThemeColors } from 'spectator-uk-theme'
+import { Styled } from './styles'
 
-export interface UiButtonProps {
+export interface UiButtonProps extends StandardProps {
   href?: string
   as?: 'button' | 'a' | 'span'
   size?: ThemeSizes
@@ -17,8 +18,6 @@ export interface UiButtonProps {
   iconSize?: ThemeSizes
   iconColor?: keyof ThemeColors
   hovered?: boolean
-  onClick?: (event: SyntheticEvent) => void | Promise<void> | Function
-  className?: string
 }
 
 export type UiButtonIconProps = UiIconProps &
@@ -40,6 +39,7 @@ export const UiButton: React.FC<UiButtonProps> = forwardRef(
       iconColor,
       hovered = false,
       onClick,
+      id,
       className,
       children
     },
@@ -62,6 +62,7 @@ export const UiButton: React.FC<UiButtonProps> = forwardRef(
         shape={shape}
         hovered={hovered}
         onClick={onClick}
+        id={id}
         className={className}
       >
         <Styled.buttonText

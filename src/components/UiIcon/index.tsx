@@ -1,18 +1,18 @@
 import React, { forwardRef } from 'react'
-import { icons } from './icons'
-import { ThemeSizes, ThemeColors } from 'spectator-uk-theme'
+import { ThemeColors, ThemeSizes } from 'spectator-uk-theme'
+import { StandardProps } from 'types/standardProps'
 import { theme } from '../../global/theme'
+import { icons } from './icons'
 import { iconMetrics } from './metrics'
 
-export interface UiIconProps {
+export interface UiIconProps extends StandardProps {
   icon: keyof typeof icons | undefined
   size?: ThemeSizes
   color?: 'currentColor' | keyof ThemeColors
-  className?: string
 }
 
 export const UiIcon: React.FC<UiIconProps> = forwardRef(
-  ({ icon, size = 'm', color = 'currentColor', className }, ref) => {
+  ({ icon, size = 'm', color = 'currentColor', id, className }, ref) => {
     const sizeValue = iconMetrics[size]?.sizeValue
 
     const colorValue =
@@ -24,6 +24,7 @@ export const UiIcon: React.FC<UiIconProps> = forwardRef(
         width={sizeValue}
         height={sizeValue}
         viewBox={icon ? icons[icon].viewBox : undefined}
+        id={id}
         className={className}
       >
         <path

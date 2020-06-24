@@ -1,17 +1,23 @@
 import React, { forwardRef } from 'react'
-import { Styled } from './styles'
+import { StandardProps } from 'types/standardProps'
 import { AsProp } from '../../types/asProp'
+import { Styled } from './styles'
 
-export interface UiPageContainerProps {
+export interface UiPageContainerProps extends StandardProps {
   width?: 'extraNarrow' | 'narrow' | 'normal'
   as?: AsProp
-  className?: string
 }
 
 export const UiPageContainer: React.FC<UiPageContainerProps> = forwardRef(
-  ({ width = 'normal', as, className, children }, ref) => {
+  ({ width = 'normal', as, id, className, children }, ref) => {
     return (
-      <Styled.container ref={ref} as={as} width={width} className={className}>
+      <Styled.container
+        ref={ref}
+        as={as}
+        width={width}
+        id={id}
+        className={className}
+      >
         {children}
       </Styled.container>
     )
