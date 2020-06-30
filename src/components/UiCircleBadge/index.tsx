@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { ThemeColors, ThemeSizes } from 'spectator-uk-theme'
-import { StandardProps } from 'types/standardProps'
+import { StandardProps } from '../../types/standardProps'
 import { Styled } from './styles'
 
 export interface UiCircleBadgeProps extends StandardProps {

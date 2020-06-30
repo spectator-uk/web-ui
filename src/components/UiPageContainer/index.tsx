@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { StandardProps } from 'types/standardProps'
+import { StandardProps } from '../../types/standardProps'
 import { AsProp } from '../../types/asProp'
 import { Styled } from './styles'
 

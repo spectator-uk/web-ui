@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { StandardProps } from 'types/standardProps'
+import { StandardProps } from '../../types/standardProps'
 import { Styled } from './styles'
 
 export interface UiDividerProps extends StandardProps {}

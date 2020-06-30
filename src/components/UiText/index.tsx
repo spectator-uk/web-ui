@@ -5,7 +5,7 @@ import {
   ThemeTextLineHeights,
   ThemeTextWeights
 } from 'spectator-uk-theme'
-import { StandardProps } from 'types/standardProps'
+import { StandardProps } from '../../types/standardProps'
 import { theme, ThemeBreakpoints } from '../../global/theme'
 import { AsProp } from '../../types/asProp'
 import { Styled } from './styles'

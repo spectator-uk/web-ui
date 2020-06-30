@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { ThemeColors, ThemeSizes } from 'spectator-uk-theme'
-import { StandardProps } from 'types/standardProps'
+import { StandardProps } from '../../types/standardProps'
 import { UiIconProps } from '../UiIcon'
 import { useUiButtonLogic } from './logic'
 import { Styled } from './styles'
