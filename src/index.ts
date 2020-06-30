@@ -23,6 +23,7 @@ export * from './utilities/functions/determineBreakpointValue'
 export * from './utilities/mixins/tripleLine'
 
 // Types
+export * from './types/standardProps'
 export * from './types/asProp'
 
 type Theme = typeof theme
