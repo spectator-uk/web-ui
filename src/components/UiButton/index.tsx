@@ -11,6 +11,7 @@ export interface UiButtonProps extends StandardProps {
   size?: ThemeSizes
   width?: 'narrow' | 'normal' | 'wide' | 'full'
   color?: keyof Pick<ThemeColors, 'primary' | 'ghost' | 'ghostWhite'>
+  customBg?: string
   textColor?: keyof ThemeColors
   shape?: 'pill' | 'circle' | 'square'
   icon?: UiIconProps['icon']
@@ -31,6 +32,7 @@ export const UiButton: React.FC<UiButtonProps> = forwardRef(
       size = 'm',
       width = 'normal',
       color = 'primary',
+      customBg,
       textColor,
       shape = 'pill',
       icon,
@@ -59,6 +61,7 @@ export const UiButton: React.FC<UiButtonProps> = forwardRef(
         size={size}
         width={width}
         color={color}
+        customBg={customBg}
         shape={shape}
         hovered={hovered}
         onClick={onClick}
