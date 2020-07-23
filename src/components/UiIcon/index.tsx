@@ -4,11 +4,13 @@ import { theme } from '../../global/theme'
 import { StandardProps } from '../../types/standardProps'
 import { iconMetrics } from './metrics'
 
+export type Icon = {
+  viewBox: string
+  path: string
+}
+
 export interface UiIconProps extends StandardProps {
-  icon: {
-    viewBox: string
-    path: string
-  }
+  icon: Icon
   size?: ThemeSizes
   color?: 'currentColor' | keyof ThemeColors
 }
