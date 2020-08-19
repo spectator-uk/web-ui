@@ -3,7 +3,7 @@ import { theme } from '../../../global/theme'
 import { LogoProps } from '../index'
 import { Styled } from './styles'
 
-export const SpectatorEventsOnlineLogo: React.FC<LogoProps> = forwardRef(
+export const SpectatorTVLogo: React.FC<LogoProps> = forwardRef(
   ({ color = 'white', id, className }, ref) => {
     const fillColor = theme.color[color]
 
