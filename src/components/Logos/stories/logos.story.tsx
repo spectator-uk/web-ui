@@ -1,8 +1,8 @@
 import React from 'react'
 import theme from 'spectator-uk-theme'
-import { SpectatorEventsOnlineLogo } from '../SpectatorEventsOnlineLogo'
 import { SpectatorLogo } from '../SpectatorLogo'
 import { SpectatorLogoMini } from '../SpectatorLogoMini'
+import { SpectatorTVLogo } from '../SpectatorTVLogo'
 
 export default {
   title: 'Logos'
@@ -20,8 +20,8 @@ export const SpectatorMini = () => (
   </div>
 )
 
-export const SpectatorEventsOnline = () => (
+export const SpectatorTV = () => (
   <div style={{ background: theme.color.black, padding: 40, fontSize: 56 }}>
-    <SpectatorEventsOnlineLogo />
+    <SpectatorTVLogo />
   </div>
 )

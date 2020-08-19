@@ -1,5 +1,5 @@
 import React from 'react'
-import UiSpinner from '..'
+import { UiSpinner } from '..'
 import { UiText } from '../../UiText'
 
 export default {
